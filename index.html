@@ -1,68 +1,10 @@
 <!doctype html>
 <html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b0d12">
-<meta name="description" content="Línea de tiempo interactiva sobre la historia y evolución del teatro, integrada con apuntes de clase y contenido de la PPT.">
-<title>Teatro · Historia y evolución</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="noise"></div>
-<header class="hero">
-  <nav class="nav wrap">
-    <a class="brand" href="#inicio"><span class="brand-mark">T</span><span>TEATRO<span class="brand-dot">.</span></span></a>
-    <div class="nav-links"><a href="#linea">Línea de tiempo</a><a href="#claves">Claves</a><a href="#fuentes">Fuentes</a></div>
-    <button class="theme-btn" id="themeBtn" aria-label="Cambiar tema">◐</button>
-  </nav>
-  <div class="hero-inner wrap" id="inicio">
-    <div class="hero-copy">
-      <div class="kicker"><span></span> HISTORIA · EVOLUCIÓN · EXPERIENCIA</div>
-      <h1>Del <em>rito</em><br>al espectador<br><strong>inmersivo.</strong></h1>
-      <p>Una línea de tiempo visual e interactiva que conecta los contenidos de la PPT con las ideas registradas en los apuntes de clase.</p>
-      <div class="hero-actions"><a class="primary" href="#linea">Explorar la historia <span>↓</span></a><button class="secondary" id="startBtn">Ver recorrido completo</button></div>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="stage"><div class="curtain left"></div><div class="curtain right"></div><div class="mask mask-1">◒</div><div class="mask mask-2">◓</div><div class="stage-floor"></div></div>
-      <div class="art-label label-a">SIGLO V a. C.</div><div class="art-label label-b">HOY</div>
-    </div>
-  </div>
-  <div class="hero-meta wrap"><div><b>12</b><span>etapas</span></div><div><b>3</b><span>fuentes de contenido</span></div><div><b>∞</b><span>formas de interacción</span></div></div>
-</header>
-
-<main>
-<section class="intro wrap" id="linea">
-  <div><span class="section-no">01 / RECORRIDO</span><h2>Una historia que<br><em>se transforma.</em></h2></div>
-  <div class="intro-text"><p>Avanza desde los rituales antiguos hasta el teatro contemporáneo y la experiencia inmersiva. Cada hito conserva la información de la presentación y, cuando corresponde, incorpora el concepto escrito en el apunte.</p><div class="legend"><span><i class="dot ppt"></i>PPT</span><span><i class="dot note"></i>Apunte de clase</span><span><i class="dot link"></i>Contexto dinámico</span></div></div>
-</section>
-
-<section class="explorer wrap">
-  <div class="toolbar"><div class="search-box"><span>⌕</span><input id="search" type="search" placeholder="Buscar etapa, personaje, obra o concepto…" autocomplete="off"></div><select id="periodFilter" aria-label="Filtrar por período"><option value="all">Todos los períodos</option></select><button class="clear-btn" id="clearBtn">Limpiar</button></div>
-  <div class="timeline-shell">
-    <div class="timeline-track"><div class="track-line"></div><div class="track-progress" id="trackProgress"></div><div id="markers"></div></div>
-    <div id="cards" class="timeline-list"></div>
-  </div>
-  <div id="empty" class="empty" hidden><span>∅</span><h3>No encontramos ese concepto</h3><p>Prueba con “Grecia”, “Molière”, “Chéjov”, “cuarta pared” o “inmersivo”.</p></div>
-</section>
-
-<section class="claves wrap" id="claves">
-  <div class="section-head"><span class="section-no">02 / CLAVES</span><h2>Conceptos que marcan<br><em>la evolución.</em></h2></div>
-  <div class="key-grid">
-    <article><span class="key-icon">01</span><h3>Rito → representación</h3><p>Los apuntes parten del <strong>rito</strong> y relacionan el teatro con una función de educación.</p></article>
-    <article><span class="key-icon">02</span><h3>Espectáculo → experiencia</h3><p>Roma y el Barroco refuerzan la dimensión de <strong>espectáculo</strong>; el presente la transforma en experiencia.</p></article>
-    <article><span class="key-icon">03</span><h3>Público → participante</h3><p>La <strong>cuarta pared</strong>, la interacción y el multimedia modifican la relación con el espectador.</p></article>
-    <article><span class="key-icon">04</span><h3>Tradición → experimentación</h3><p>Del legado clásico a Brecht, Beckett y las nuevas formas del teatro contemporáneo.</p></article>
-  </div>
-</section>
-
-<section class="sources wrap" id="fuentes">
-  <div class="source-card"><span class="section-no">03 / CRITERIO</span><h2>Dos capas de información.<br><em>Una sola historia.</em></h2><div class="source-cols"><div><b>PPT</b><p>Base principal para la secuencia histórica, características, dramaturgos y obras.</p></div><div><b>APUNTE</b><p>Conceptos registrados durante la clase, asociados al período donde tienen sentido.</p></div><div><b>API</b><p>Consulta opcional de contexto externo. No sustituye el contenido de la PPT ni del apunte.</p></div></div></div>
-  <footer><span>HISTORIA Y EVOLUCIÓN DEL TEATRO</span><span>Proyecto interactivo académico · 2026</span></footer>
-</section>
-</main>
-
-<div id="modal" class="modal" aria-hidden="true"><div class="modal-box"><button id="close" class="close" aria-label="Cerrar">×</button><div id="modalContent"></div></div></div>
-<script src="app.js"></script>
-</body>
-</html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0d12"><meta name="description" content="Línea de tiempo interactiva sobre la historia y evolución del teatro."><title>Teatro · Historia y evolución</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="noise"></div>
+<header class="hero"><nav class="nav wrap"><a class="brand" href="#inicio"><span class="brand-mark">T</span><span>TEATRO<span class="brand-dot">.</span></span></a><div class="nav-links"><a href="#linea">Línea de tiempo</a><a href="#claves">Claves</a><a href="#fuentes">Fuentes</a></div><button class="theme-btn" id="themeBtn">◐</button></nav><div class="hero-inner wrap" id="inicio"><div class="hero-copy"><div class="kicker"><span></span> HISTORIA · EVOLUCIÓN · EXPERIENCIA</div><h1>Del <em>rito</em><br>al espectador<br><strong>inmersivo.</strong></h1><p>Un recorrido visual que conecta la PPT con los apuntes de clase, desde los orígenes hasta el futuro del teatro.</p><div class="hero-actions"><a class="primary" href="#linea">Explorar la historia <span>↓</span></a><button class="secondary" id="startBtn">Ver recorrido completo</button></div></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="stage"><div class="curtain left"></div><div class="curtain right"></div><div class="mask mask-1">◒</div><div class="mask mask-2">◓</div><div class="stage-floor"></div></div><div class="art-label label-a">SIGLO V a. C.</div><div class="art-label label-b">HOY</div></div></div><div class="hero-meta wrap"><div><b>12</b><span>etapas</span></div><div><b>3</b><span>capas de contenido</span></div><div><b>∞</b><span>interacciones</span></div></div></header>
+<main><section class="intro wrap" id="linea"><div><span class="section-no">01 / RECORRIDO</span><h2>Una historia que<br><em>se transforma.</em></h2></div><div class="intro-text"><p>Explora cada etapa. Haz clic para abrir el detalle, ver los elementos de la PPT, los apuntes asociados, personajes y obras. La consulta API es opcional.</p><div class="legend"><span><i class="dot ppt"></i>PPT</span><span><i class="dot note"></i>Apunte</span><span><i class="dot link"></i>API</span></div></div></section>
+<section class="explorer wrap"><div class="toolbar"><div class="search-box"><span>⌕</span><input id="search" type="search" placeholder="Buscar etapa, personaje, obra o concepto…"></div><select id="periodFilter"><option value="all">Todos los períodos</option></select><button class="clear-btn" id="clearBtn">Limpiar</button></div><div class="timeline-shell"><div class="timeline-track"><div class="track-line"></div><div class="track-progress" id="trackProgress"></div><div id="markers"></div></div><div id="cards" class="timeline-list"></div></div><div id="empty" class="empty" hidden><span>∅</span><h3>No encontramos ese concepto</h3><p>Prueba con Grecia, Molière, Chéjov, cuarta pared o inmersivo.</p></div></section>
+<section class="claves wrap" id="claves"><div class="section-head"><span class="section-no">02 / CLAVES</span><h2>Conceptos que marcan<br><em>la evolución.</em></h2></div><div class="key-grid"><article><span class="key-icon">01</span><h3>Rito → representación</h3><p>Los apuntes parten del <strong>rito</strong> y lo relacionan con la educación.</p></article><article><span class="key-icon">02</span><h3>Espectáculo → experiencia</h3><p>Roma y el Barroco refuerzan la dimensión de <strong>espectáculo</strong>.</p></article><article><span class="key-icon">03</span><h3>Público → participante</h3><p>La <strong>cuarta pared</strong>, la interacción y el multimedia cambian la relación con el espectador.</p></article><article><span class="key-icon">04</span><h3>Tradición → experimentación</h3><p>Del legado clásico a Brecht, Beckett y las nuevas formas contemporáneas.</p></article></div></section>
+<section class="sources wrap" id="fuentes"><div class="source-card"><span class="section-no">03 / CRITERIO</span><h2>Dos capas de información.<br><em>Una sola historia.</em></h2><div class="source-cols"><div><b>PPT</b><p>Secuencia histórica, características, dramaturgos y obras.</p></div><div><b>APUNTE</b><p>Conceptos registrados durante la clase, asociados a cada período.</p></div><div><b>API</b><p>Contexto externo opcional; no sustituye las fuentes de clase.</p></div></div></div><footer><span>HISTORIA Y EVOLUCIÓN DEL TEATRO</span><span>PROYECTO INTERACTIVO · 2026</span></footer></section></main>
+<div id="modal" class="modal" aria-hidden="true"><div class="modal-box"><button id="close" class="close">×</button><div id="modalContent"></div></div></div><script src="app.js.tmp"></script></body></html>
