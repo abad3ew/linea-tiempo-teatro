@@ -4,186 +4,136 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#070804">
-<title>Para Mariana · Rosas 3D</title>
+<title>Para Mariana</title>
 <style>
-*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0}body{overflow:hidden;background:#070804;color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
-:root{--rx:-7deg;--ry:0deg;--lx:50%;--ly:34%}
-.stage{position:relative;width:100%;height:100%;display:grid;place-items:center;perspective:1450px;overflow:hidden;background:
-radial-gradient(circle at var(--lx) var(--ly),rgba(255,210,55,.18),transparent 23%),
-radial-gradient(circle at 50% 70%,rgba(119,90,14,.10),transparent 32%),
-linear-gradient(180deg,#13140d 0%,#090a07 58%,#030402 100%)}
-.stage:before{content:"";position:absolute;inset:0;background:
-linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px),
-linear-gradient(rgba(255,255,255,.013) 1px,transparent 1px);background-size:52px 52px;mask-image:radial-gradient(circle at center,#000,transparent 72%);opacity:.18}
-.stage:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at center,transparent 48%,rgba(0,0,0,.52) 100%)}
-.ambient{position:absolute;width:min(60vw,760px);aspect-ratio:1;border-radius:50%;background:#f2c62d;filter:blur(130px);opacity:.07;pointer-events:none}
-.title{position:absolute;z-index:40;top:max(20px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);text-align:center;pointer-events:none}
-.title small{display:block;color:#9d9577;letter-spacing:.36em;text-transform:uppercase;font-size:.56rem;margin-bottom:6px}
-.title h1{margin:0;font-family:Georgia,serif;font-weight:400;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.04em;color:#fff8de}.title em{color:#f5cc35;font-weight:400}
-.hint{position:absolute;z-index:40;bottom:max(14px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);font-size:.58rem;letter-spacing:.17em;text-transform:uppercase;color:#77715d;white-space:nowrap;pointer-events:none}
-.scene{position:relative;width:min(94vw,760px);height:min(80vh,780px);transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .12s ease-out;will-change:transform;cursor:grab;animation:idleFloat 7s ease-in-out infinite}.scene:active{cursor:grabbing}
-.bouquet{position:absolute;left:50%;top:46%;width:1px;height:1px;transform-style:preserve-3d}
-.rose{position:absolute;width:200px;height:200px;margin:-100px;transform-style:preserve-3d;transform:translate3d(var(--x),var(--y),var(--z)) scale(var(--s)) rotateX(var(--tiltx)) rotateY(var(--tilty)) rotateZ(var(--tiltz));filter:drop-shadow(0 26px 19px rgba(0,0,0,.35));animation:bloom 1.25s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--delay)}
-.rose-core{position:absolute;left:50%;top:50%;width:1px;height:1px;transform-style:preserve-3d}
-.petal{position:absolute;left:50%;top:50%;width:var(--pw);height:var(--ph);margin-left:calc(var(--pw)/-2);margin-top:calc(var(--ph)/-2);transform-origin:50% 88%;transform-style:preserve-3d;border-radius:50% 50% 46% 54% / 76% 74% 26% 24%;
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%}body{overflow:hidden;background:#070804;color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+:root{--rx:-6deg;--ry:0deg;--mx:50%;--my:38%}
+.stage{position:relative;width:100%;height:100%;display:grid;place-items:center;perspective:1500px;overflow:hidden;background:
+radial-gradient(circle at var(--mx) var(--my),rgba(255,217,92,.15),transparent 20%),
+radial-gradient(circle at 50% 74%,rgba(112,88,16,.09),transparent 30%),
+linear-gradient(180deg,#11130d 0%,#090a07 58%,#050603 100%)}
+.stage:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at center,transparent 45%,rgba(0,0,0,.58) 100%)}
+.halo{position:absolute;width:min(46vw,520px);aspect-ratio:1;border-radius:50%;background:#f2cf43;filter:blur(105px);opacity:.08}
+.title{position:absolute;z-index:30;top:max(20px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);text-align:center;pointer-events:none}
+.title small{display:block;color:#8f896f;letter-spacing:.36em;text-transform:uppercase;font-size:.56rem;margin-bottom:7px}
+.title h1{margin:0;font-family:Georgia,serif;font-weight:400;font-size:clamp(1.65rem,4vw,2.9rem);letter-spacing:-.04em;color:#fff8de}
+.title em{color:#f5cc35;font-weight:400}
+.scene{position:relative;width:min(90vw,560px);height:min(78vh,700px);transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .12s ease-out;will-change:transform;cursor:grab;animation:breathe 6.5s ease-in-out infinite}
+.scene:active{cursor:grabbing}
+.roseWrap{position:absolute;left:50%;top:47%;width:1px;height:1px;transform-style:preserve-3d}
+.rose{position:absolute;width:320px;height:320px;margin:-160px;transform-style:preserve-3d;filter:drop-shadow(0 30px 30px rgba(0,0,0,.35));animation:bloom 1.4s cubic-bezier(.16,1,.3,1) both}
+.core{position:absolute;left:50%;top:50%;width:1px;height:1px;transform-style:preserve-3d}
+.petal{position:absolute;left:50%;top:50%;width:var(--pw);height:var(--ph);margin-left:calc(var(--pw)/-2);margin-top:calc(var(--ph)/-2);transform-origin:50% 88%;border-radius:51% 49% 47% 53% / 78% 76% 24% 22%;transform-style:preserve-3d;
 background:
-radial-gradient(circle at calc(34% + var(--lightShift)) 20%,rgba(255,255,255,.72),transparent 16%),
-linear-gradient(150deg,#fff48f 0%,#fbe259 18%,#f3cc32 42%,#d99d11 78%,#ad6d08 100%);
+radial-gradient(circle at 36% 18%,rgba(255,255,255,.76),transparent 16%),
+linear-gradient(150deg,#fff6a3 0%,#ffe76b 16%,#f4cf3c 40%,#dfa817 72%,#a96708 100%);
 box-shadow:
-inset 7px 4px 11px rgba(255,255,255,.24),
-inset -10px -16px 20px rgba(105,58,0,.20),
-0 2px 5px rgba(0,0,0,.16);
-transform:rotateZ(var(--a)) rotateX(var(--curl)) rotateY(var(--yaw)) translateY(var(--r)) translateZ(var(--depth)) scale(var(--ps));
-backface-visibility:visible}
-.petal:before{content:"";position:absolute;left:10%;right:10%;top:2%;height:34%;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.32),transparent);filter:blur(.8px)}
-.petal:after{content:"";position:absolute;left:44%;bottom:3%;width:12%;height:58%;border-radius:50%;background:linear-gradient(180deg,transparent,rgba(95,54,0,.13));filter:blur(1px)}
-.center{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px;border-radius:50%;background:
-radial-gradient(circle at 45% 38%,#fff16c 0 12%,#efc226 20%,#c98a0e 43%,#765000 73%,#3d2900 100%);
-transform:translateZ(45px);box-shadow:0 0 20px rgba(255,208,43,.32)}
-.stem{position:absolute;left:50%;top:50%;width:14px;height:315px;margin-left:-7px;transform-origin:50% 0;transform:translate3d(var(--x),var(--y),calc(var(--z) - 38px)) rotateZ(var(--stemrot)) rotateX(10deg);border-radius:10px;background:linear-gradient(90deg,#10280d,#4f7c2b 38%,#78a64a 52%,#2d521b 72%,#0d210a);box-shadow:inset 2px 0 2px rgba(255,255,255,.12),8px 20px 26px rgba(0,0,0,.22)}
-.leaf{position:absolute;left:50%;top:50%;width:100px;height:46px;transform-style:preserve-3d;transform:translate3d(var(--x),var(--y),var(--z)) rotateZ(var(--rz)) rotateY(var(--ry2)) rotateX(var(--rx2));border-radius:100% 0 100% 0;background:
-linear-gradient(155deg,rgba(255,255,255,.16),transparent 26%),
-linear-gradient(145deg,#1f4b19,#4f7c2f 44%,#173914 80%);
-box-shadow:inset 0 -7px 11px rgba(0,0,0,.25),0 12px 20px rgba(0,0,0,.18);transform-origin:0 50%}
-.leaf:before{content:"";position:absolute;inset:4px 9px;border-radius:inherit;background:repeating-linear-gradient(28deg,transparent 0 8px,rgba(227,245,201,.08) 9px 10px)}
-.leaf:after{content:"";position:absolute;left:7px;right:8px;top:51%;height:1px;background:rgba(218,240,190,.30);transform:rotate(-17deg)}
-.wrap{position:absolute;left:50%;top:68%;width:410px;height:340px;margin-left:-205px;transform:translateZ(-105px);clip-path:polygon(8% 0,31% 10%,50% 3%,69% 10%,92% 0,78% 100%,22% 100%);background:linear-gradient(118deg,#f3e4bb 0%,#d1aa55 40%,#f5df9f 65%,#b8862b 100%);filter:drop-shadow(0 30px 26px rgba(0,0,0,.38));opacity:.92}
-.wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(98deg,transparent 20%,rgba(255,255,255,.34) 33%,transparent 46%,rgba(98,58,3,.13) 68%,transparent)}
-.ribbon{position:absolute;left:50%;top:79%;width:310px;height:74px;margin-left:-155px;transform:translateZ(80px);border-radius:50%;background:linear-gradient(180deg,#efc744,#a36b0d);box-shadow:0 12px 22px rgba(0,0,0,.3),inset 0 5px 9px rgba(255,255,255,.22)}
-.ribbon:before,.ribbon:after{content:"";position:absolute;top:30px;width:165px;height:120px;background:linear-gradient(145deg,#dcae27,#8b5907);clip-path:polygon(0 0,100% 18%,73% 100%,42% 70%,0 95%);z-index:-1}
-.ribbon:before{right:51%;transform:rotate(12deg)}.ribbon:after{left:51%;transform:scaleX(-1) rotate(12deg)}
-.tag{position:absolute;left:50%;top:84%;transform:translate3d(-50%,0,138px) rotateZ(-4deg);padding:11px 20px;border-radius:7px;background:#f6efd9;color:#6d5011;font-family:Georgia,serif;font-style:italic;font-size:1.08rem;box-shadow:0 12px 24px rgba(0,0,0,.28)}
-.baby{position:absolute;width:8px;height:8px;border-radius:50%;background:#fffdf0;box-shadow:0 0 0 2px rgba(255,255,255,.15),0 0 10px rgba(255,248,219,.16);transform:translate3d(var(--x),var(--y),var(--z))}
-.baby:before,.baby:after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:#f8f4df}.baby:before{left:-5px;top:2px}.baby:after{right:-4px;top:-3px}
-.floor{position:absolute;left:50%;top:80%;width:min(78vw,650px);height:155px;transform:translateX(-50%) rotateX(78deg) translateZ(-130px);border-radius:50%;background:radial-gradient(ellipse,#171910 0,#0a0b07 58%,transparent 76%);filter:blur(5px)}
-.spark{position:absolute;width:3px;height:3px;border-radius:50%;background:#f8dc67;box-shadow:0 0 12px #ffd74d;animation:float var(--d) ease-in-out infinite alternate;opacity:.35}
-@keyframes bloom{0%{opacity:0;transform:translate3d(var(--x),calc(var(--y) + 72px),var(--z)) scale(.04) rotateZ(18deg)}100%{opacity:1;transform:translate3d(var(--x),var(--y),var(--z)) scale(var(--s)) rotateX(var(--tiltx)) rotateY(var(--tilty)) rotateZ(var(--tiltz))}}
-@keyframes float{to{transform:translate3d(var(--dx),-55px,55px);opacity:.82}}
-@keyframes idleFloat{50%{translate:0 -4px}}
-@media(max-width:650px){.scene{width:100vw;height:75vh;transform:rotateX(calc(var(--rx) + 3deg)) rotateY(var(--ry)) scale(.76)}.title{top:16px}.hint{bottom:10px}.tag{top:84.5%}}
-@media(prefers-reduced-motion:reduce){.rose,.spark,.scene{animation:none!important}.scene{transition:none}}
+inset 8px 4px 12px rgba(255,255,255,.26),
+inset -12px -18px 22px rgba(98,53,0,.22),
+0 2px 5px rgba(0,0,0,.14);
+transform:rotateZ(var(--a)) rotateX(var(--curl)) rotateY(var(--yaw)) translateY(var(--r)) translateZ(var(--depth)) scale(var(--ps))}
+.petal:before{content:"";position:absolute;left:12%;right:12%;top:3%;height:32%;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.32),transparent);filter:blur(.8px)}
+.petal:after{content:"";position:absolute;left:45%;bottom:4%;width:10%;height:56%;border-radius:50%;background:linear-gradient(180deg,transparent,rgba(90,49,0,.14));filter:blur(1px)}
+.center{position:absolute;left:50%;top:50%;width:52px;height:52px;margin:-26px;border-radius:50%;background:radial-gradient(circle at 46% 40%,#fff681 0 10%,#f0c52d 23%,#c98b10 46%,#765000 75%,#3b2500 100%);transform:translateZ(56px);box-shadow:0 0 28px rgba(255,211,56,.34)}
+.stem{position:absolute;left:50%;top:50%;width:18px;height:390px;margin-left:-9px;transform:translate3d(0,135px,-44px) rotateX(5deg);border-radius:10px;background:linear-gradient(90deg,#10280d,#4d7d2a 36%,#79a74b 50%,#2c511b 72%,#0e210a);box-shadow:inset 2px 0 2px rgba(255,255,255,.12),8px 18px 24px rgba(0,0,0,.22)}
+.leaf{position:absolute;left:50%;top:50%;width:125px;height:58px;border-radius:100% 0 100% 0;transform-style:preserve-3d;background:
+linear-gradient(155deg,rgba(255,255,255,.14),transparent 28%),
+linear-gradient(145deg,#1d4818,#4f7d2f 44%,#173814 80%);
+box-shadow:inset 0 -8px 11px rgba(0,0,0,.25),0 12px 20px rgba(0,0,0,.18)}
+.leaf:before{content:"";position:absolute;inset:5px 10px;border-radius:inherit;background:repeating-linear-gradient(30deg,transparent 0 10px,rgba(225,243,200,.08) 11px 12px)}
+.leaf:after{content:"";position:absolute;left:8px;right:10px;top:50%;height:1px;background:rgba(218,240,190,.3);transform:rotate(-17deg)}
+.leaf.one{transform:translate3d(-18px,195px,0) rotateZ(-34deg) rotateY(18deg) rotateX(8deg)}
+.leaf.two{transform:translate3d(8px,245px,-10px) rotateZ(152deg) rotateY(-22deg) rotateX(-6deg) scale(.92)}
+.shadow{position:absolute;left:50%;top:83%;width:min(55vw,420px);height:110px;transform:translateX(-50%) rotateX(78deg) translateZ(-120px);border-radius:50%;background:radial-gradient(ellipse,rgba(25,27,16,.85),rgba(10,11,7,.45) 55%,transparent 76%);filter:blur(6px)}
+.message{position:absolute;z-index:30;bottom:max(24px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(90vw,520px);text-align:center;pointer-events:none}
+.message p{margin:0;font-family:Georgia,serif;font-size:clamp(1rem,2.6vw,1.22rem);line-height:1.55;color:#e9e1c7}
+.message strong{font-weight:400;color:#f4d15a}
+.message span{display:block;margin-top:8px;color:#77715f;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase}
+.spark{position:absolute;width:3px;height:3px;border-radius:50%;background:#f7d960;box-shadow:0 0 12px #ffd74d;animation:float var(--d) ease-in-out infinite alternate;opacity:.28}
+@keyframes bloom{0%{opacity:0;transform:scale(.15) rotateZ(-8deg)}100%{opacity:1;transform:scale(1) rotateZ(0)}}
+@keyframes breathe{50%{translate:0 -5px}}
+@keyframes float{to{transform:translate3d(var(--dx),-55px,50px);opacity:.72}}
+@media(max-width:650px){.scene{transform:rotateX(calc(var(--rx) + 2deg)) rotateY(var(--ry)) scale(.82);height:72vh}.message{bottom:14px}.title{top:14px}}
+@media(prefers-reduced-motion:reduce){.scene,.spark,.rose{animation:none!important}.scene{transition:none}}
 </style>
 </head>
 <body>
 <div class="stage" id="stage">
-  <div class="ambient"></div>
-  <div class="title"><small>un detalle para</small><h1><em>Mariana</em></h1></div>
-  <div class="floor"></div>
+  <div class="halo"></div>
+  <div class="title"><small>una sola rosa para</small><h1><em>Mariana</em></h1></div>
+  <div class="shadow"></div>
   <div class="scene" id="scene">
-    <div class="bouquet" id="bouquet">
-      <div class="wrap"></div>
-      <div class="ribbon"></div>
-      <div class="tag">Para Mariana</div>
+    <div class="roseWrap">
+      <div class="stem"></div>
+      <div class="leaf one"></div>
+      <div class="leaf two"></div>
+      <div class="rose"><div class="core" id="core"><div class="center"></div></div></div>
     </div>
   </div>
-  <div class="hint">mueve el ramo · arrastra con el dedo</div>
+  <div class="message">
+    <p>No todo lo importante necesita muchas palabras. <strong>A veces, una sola flor basta.</strong></p>
+    <span>mueve la rosa con el dedo o el mouse</span>
+  </div>
 </div>
 <script>
-const bouquet=document.getElementById('bouquet');
+const core=document.getElementById('core');
 const scene=document.getElementById('scene');
-const stage=document.getElementById('stage');
-
-const roses=[
-{x:-185,y:-175,z:-12,s:.78,tx:-8,ty:14,tz:-16,open:.72},
-{x:-72,y:-220,z:62,s:.88,tx:-7,ty:-8,tz:8,open:.80},
-{x:55,y:-218,z:108,s:.95,tx:-4,ty:9,tz:-4,open:.86},
-{x:177,y:-168,z:4,s:.80,tx:-10,ty:-14,tz:15,open:.72},
-{x:-214,y:-72,z:30,s:.85,tx:-4,ty:18,tz:-9,open:.84},
-{x:-98,y:-80,z:150,s:1.00,tx:-5,ty:-4,tz:8,open:.98},
-{x:38,y:-98,z:194,s:1.07,tx:-3,ty:5,tz:-5,open:1.08},
-{x:157,y:-67,z:98,s:.92,tx:-7,ty:-10,tz:10,open:.93},
-{x:-150,y:24,z:62,s:.88,tx:-10,ty:10,tz:-8,open:.92},
-{x:-30,y:14,z:214,s:1.10,tx:-2,ty:-2,tz:2,open:1.14},
-{x:108,y:20,z:126,s:.96,tx:-6,ty:8,tz:8,open:1.00},
-{x:-80,y:110,z:78,s:.82,tx:-9,ty:-7,tz:-6,open:.82},
-{x:62,y:107,z:50,s:.80,tx:-8,ty:10,tz:7,open:.78}
+function petal(styles){
+  const p=document.createElement('div');p.className='petal';
+  for(const [k,v] of Object.entries(styles)) p.style.setProperty(k,v);
+  core.insertBefore(p,core.firstChild);
+}
+const rings=[
+  {n:6,r:5,w:52,h:86,c:-64,d:48,s:.62},
+  {n:9,r:14,w:66,h:104,c:-50,d:38,s:.74},
+  {n:12,r:28,w:80,h:122,c:-36,d:25,s:.86},
+  {n:16,r:46,w:94,h:140,c:-22,d:12,s:.98},
+  {n:20,r:64,w:108,h:154,c:-10,d:-2,s:1.08}
 ];
-
-function el(cls,styles={}){const n=document.createElement('div');n.className=cls;for(const[k,v]of Object.entries(styles))n.style.setProperty(k,v);return n}
-
-function makeRose(r,i){
-  bouquet.appendChild(el('stem',{'--x':r.x+'px','--y':(r.y+60)+'px','--z':r.z+'px','--stemrot':(r.x*.032)+'deg'}));
-  const rose=el('rose',{'--x':r.x+'px','--y':r.y+'px','--z':r.z+'px','--s':r.s,'--tiltx':r.tx+'deg','--tilty':r.ty+'deg','--tiltz':r.tz+'deg','--delay':(i*70)+'ms','--lightShift':((r.ty/20)*8)+'%'});
-  const core=el('rose-core');
-  const o=r.open;
-  const rings=[
-    {n:5,r:4,w:40,h:66,c:-60,d:36,s:.64},
-    {n:8,r:12,w:52,h:82,c:-46,d:28,s:.74},
-    {n:11,r:24,w:64,h:97,c:-31,d:17,s:.86},
-    {n:14,r:38,w:76,h:109,c:-18,d:7,s:.98},
-    {n:17,r:52,w:88,h:122,c:-8,d:-5,s:1.08}
-  ];
-  rings.forEach((ring,ri)=>{
-    const count=Math.max(4,Math.round(ring.n*(.86+o*.13)));
-    const offset=(ri%2)*10+(i*7)%13;
-    for(let j=0;j<count;j++){
-      const jitter=(Math.random()-.5)*10;
-      const openness=1+(o-1)*(ri/4);
-      const p=el('petal',{
-        '--a':((360/count)*j+offset+jitter)+'deg',
-        '--r':(-ring.r*openness)+'px',
-        '--depth':ring.d+'px',
-        '--curl':(ring.c+(o-1)*22+(Math.random()-.5)*8)+'deg',
-        '--yaw':((Math.random()-.5)*8)+'deg',
-        '--pw':(ring.w*(.97+Math.random()*.06))+'px',
-        '--ph':(ring.h*(.96+Math.random()*.08))+'px',
-        '--ps':ring.s*(.97+Math.random()*.05)
-      });
-      core.appendChild(p);
-    }
-  });
-  core.appendChild(el('center'));
-  rose.appendChild(core);
-  bouquet.appendChild(rose);
-}
-
-function makeLeaf(x,y,z,rz,ry,rx){bouquet.appendChild(el('leaf',{'--x':x+'px','--y':y+'px','--z':z+'px','--rz':rz+'deg','--ry2':ry+'deg','--rx2':rx+'deg'}))}
-roses.forEach(makeRose);
-[
-[-255,-95,-12,-42,10,6],[218,-104,-20,25,-16,-5],[-238,8,15,-18,24,6],[212,22,42,150,28,-5],
-[-188,120,-14,-15,-22,4],[155,124,-12,164,18,-8],[-112,158,6,-41,13,7],[98,162,14,205,-18,-3],
-[-18,170,28,-84,12,6],[-165,-145,20,-82,22,-5],[155,-138,15,83,-25,7]
-].forEach(v=>makeLeaf(...v));
-
-for(let i=0;i<34;i++){
-  const b=el('baby',{'--x':(-230+Math.random()*460)+'px','--y':(-210+Math.random()*290)+'px','--z':(-10+Math.random()*170)+'px'});
-  bouquet.appendChild(b);
-}
-for(let i=0;i<24;i++){
-  const s=el('spark',{'left':(6+Math.random()*88)+'%','top':(16+Math.random()*68)+'%','--d':(2.8+Math.random()*4)+'s','--dx':((Math.random()-.5)*80)+'px'});
+rings.forEach((ring,ri)=>{
+  const offset=(ri%2)*9;
+  for(let i=0;i<ring.n;i++){
+    petal({
+      '--a':((360/ring.n)*i+offset+(Math.random()-.5)*8)+'deg',
+      '--r':(-ring.r)+'px','--depth':ring.d+'px',
+      '--curl':(ring.c+(Math.random()-.5)*7)+'deg',
+      '--yaw':((Math.random()-.5)*8)+'deg',
+      '--pw':(ring.w*(.97+Math.random()*.05))+'px',
+      '--ph':(ring.h*(.97+Math.random()*.07))+'px',
+      '--ps':ring.s*(.98+Math.random()*.04)
+    });
+  }
+});
+for(let i=0;i<18;i++){
+  const s=document.createElement('i');s.className='spark';
+  s.style.left=(10+Math.random()*80)+'%';s.style.top=(18+Math.random()*60)+'%';
+  s.style.setProperty('--d',(3+Math.random()*4)+'s');
+  s.style.setProperty('--dx',((Math.random()-.5)*70)+'px');
   scene.appendChild(s);
 }
-
-let targetX=-7,targetY=0,drag=false,lastX=0,lastY=0;
+let rx=-6,ry=0,drag=false,lastX=0,lastY=0;
 function apply(){
-  document.documentElement.style.setProperty('--rx',targetX+'deg');
-  document.documentElement.style.setProperty('--ry',targetY+'deg');
-  document.documentElement.style.setProperty('--lx',(50+targetY*1.05)+'%');
-  document.documentElement.style.setProperty('--ly',(34-targetX*.45)+'%');
-}
-function point(x,y){
-  const r=scene.getBoundingClientRect();
-  targetY=((x-r.left)/r.width-.5)*26;
-  targetX=-7-((y-r.top)/r.height-.5)*13;
-  apply();
+  document.documentElement.style.setProperty('--rx',rx+'deg');
+  document.documentElement.style.setProperty('--ry',ry+'deg');
+  document.documentElement.style.setProperty('--mx',(50+ry*.8)+'%');
+  document.documentElement.style.setProperty('--my',(38-rx*.35)+'%');
 }
 scene.addEventListener('pointerdown',e=>{drag=true;lastX=e.clientX;lastY=e.clientY;scene.setPointerCapture(e.pointerId)});
 scene.addEventListener('pointermove',e=>{
   if(drag){
-    targetY+=(e.clientX-lastX)*.12;targetX-=(e.clientY-lastY)*.08;
-    targetY=Math.max(-30,Math.min(30,targetY));targetX=Math.max(-20,Math.min(10,targetX));
+    ry+=(e.clientX-lastX)*.12;rx-=(e.clientY-lastY)*.08;
+    ry=Math.max(-24,Math.min(24,ry));rx=Math.max(-16,Math.min(8,rx));
     lastX=e.clientX;lastY=e.clientY;apply();
-  }else if(e.pointerType==='mouse') point(e.clientX,e.clientY);
+  }else if(e.pointerType==='mouse'){
+    const r=scene.getBoundingClientRect();
+    ry=((e.clientX-r.left)/r.width-.5)*18;
+    rx=-6-((e.clientY-r.top)/r.height-.5)*10;
+    apply();
+  }
 });
 scene.addEventListener('pointerup',e=>{drag=false;scene.releasePointerCapture(e.pointerId)});
 scene.addEventListener('pointercancel',()=>drag=false);
-scene.addEventListener('dblclick',()=>{targetX=-7;targetY=0;apply()});
-window.addEventListener('deviceorientation',e=>{
-  if(e.gamma==null||innerWidth>700)return;
-  targetY=Math.max(-18,Math.min(18,e.gamma*.42));
-  targetX=-7+Math.max(-8,Math.min(8,(e.beta-45)*.12));
-  apply();
-});
+scene.addEventListener('dblclick',()=>{rx=-6;ry=0;apply()});
 </script>
 </body>
 </html>
