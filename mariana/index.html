@@ -3,68 +3,161 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#080704">
-<title>Para Mariana</title>
-<meta name="description" content="Un pequeño detalle para Mariana.">
+<meta name="theme-color" content="#080906">
+<title>Para Mariana · Rosas 3D</title>
 <style>
-:root{--ink:#080704;--paper:#f7f0d9;--yellow:#f0c72d;--gold:#d3a620;--white:#fffdf6}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow:hidden}.hidden{display:none!important}
-body.open{overflow:auto;background:#0b0905}.noise{position:fixed;inset:0;pointer-events:none;z-index:30;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
-.intro{position:fixed;z-index:20;inset:0;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 50% 42%,#241d08 0,#0b0905 35%,#050504 72%);transition:opacity 1.1s ease,visibility 1.1s ease}.intro::before{content:"";position:absolute;width:min(55vw,520px);aspect-ratio:1;border-radius:50%;background:#c89d18;filter:blur(110px);opacity:.1;animation:pulse 4s ease-in-out infinite}.intro.out{opacity:0;visibility:hidden}.intro-inner{position:relative;text-align:center;max-width:680px}.mini{font-size:.68rem;letter-spacing:.34em;text-transform:uppercase;color:#cdbd88;margin-bottom:28px}.intro h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(3.2rem,11vw,7.6rem);line-height:.88;letter-spacing:-.055em}.intro h1 em{font-weight:400;color:#e9c43b}.intro p{margin:30px auto 0;max-width:31ch;color:#bfb69f;line-height:1.65;font-size:clamp(.98rem,2.4vw,1.1rem)}.open-btn{margin-top:36px;position:relative;border:1px solid rgba(240,199,45,.48);background:rgba(255,255,255,.03);color:#f9edbd;border-radius:999px;padding:15px 26px;min-width:148px;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;overflow:hidden;transition:.35s}.open-btn::after{content:"";position:absolute;inset:-2px;background:linear-gradient(90deg,transparent,rgba(255,232,138,.18),transparent);transform:translateX(-120%);transition:.7s}.open-btn:hover{transform:translateY(-2px);border-color:#f0c72d}.open-btn:hover::after{transform:translateX(120%)}
-.hero{position:relative;min-height:100svh;display:grid;align-items:end;overflow:hidden;background:#0b0905}.hero-media{position:absolute;inset:0;transform:scale(1.08);filter:saturate(.92) brightness(.55);transition:transform 2.2s cubic-bezier(.16,1,.3,1),filter 1.8s ease}.open .hero-media{transform:scale(1);filter:saturate(1.05) brightness(.78)}.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 48%;display:block}.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,3,.46) 0%,rgba(5,5,3,.05) 32%,rgba(5,5,3,.18) 66%,rgba(5,5,3,.92) 100%),linear-gradient(90deg,rgba(5,5,3,.42),transparent 45%,rgba(5,5,3,.15))}.hero-copy{position:relative;z-index:3;width:min(1180px,100%);margin:0 auto;padding:clamp(26px,5vw,64px);padding-bottom:max(42px,env(safe-area-inset-bottom));opacity:0;transform:translateY(34px);transition:1.1s .65s ease}.open .hero-copy{opacity:1;transform:none}.kicker{display:flex;align-items:center;gap:12px;color:#e7d79b;text-transform:uppercase;font-size:.68rem;letter-spacing:.3em}.kicker::before{content:"";width:34px;height:1px;background:#e5c548}.hero h2{margin:16px 0 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(3rem,10vw,8.5rem);line-height:.86;font-weight:400;letter-spacing:-.055em;max-width:7ch}.hero h2 span{display:block;color:#f1ca34;font-style:italic}.hero-note{margin-top:24px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px}.quote{max-width:580px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.05rem,2.2vw,1.35rem);line-height:1.55;color:#f5efd9}.quote strong{color:#ffe68a;font-weight:400}.micro{max-width:260px;text-align:right;color:#bfb69f;font-size:.8rem;line-height:1.5}.scrollcue{position:absolute;right:30px;top:50%;z-index:4;writing-mode:vertical-rl;text-transform:uppercase;letter-spacing:.25em;font-size:.58rem;color:#cabc8d;opacity:.75}.scrollcue::after{content:"";display:inline-block;width:1px;height:46px;background:linear-gradient(#d8b631,transparent);margin-top:12px}
-.after{position:relative;min-height:86svh;display:grid;place-items:center;padding:80px 24px;background:radial-gradient(circle at 50% 0,#2a220c 0,#0b0905 40%,#080704 100%);overflow:hidden}.after::before{content:"";position:absolute;width:680px;height:680px;border:1px solid rgba(240,199,45,.08);border-radius:50%;box-shadow:0 0 0 90px rgba(240,199,45,.025),0 0 0 180px rgba(240,199,45,.015)}.note-card{position:relative;z-index:2;width:min(760px,100%);text-align:center;padding:clamp(34px,7vw,70px) clamp(24px,8vw,80px);border:1px solid rgba(255,236,165,.17);border-radius:34px;background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.015));box-shadow:0 30px 100px rgba(0,0,0,.42);backdrop-filter:blur(14px)}.seal{width:56px;height:56px;margin:0 auto 24px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#f2cd42,#c79512);color:#4c3a05;font-family:Georgia,serif;font-style:italic;font-size:1.3rem;box-shadow:0 8px 30px rgba(216,174,35,.2)}.note-card h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(2.25rem,6vw,4.3rem);letter-spacing:-.04em;margin:0;color:#fff5ce}.note-card p{margin:24px auto 0;max-width:42ch;color:#d5cdb6;line-height:1.8;font-size:clamp(1rem,2vw,1.12rem)}.note-card p b{font-weight:500;color:#f7d966}.quiet{margin-top:28px!important;font-size:.82rem!important;color:#8f876f!important;letter-spacing:.04em}.again{margin-top:34px;border:0;border-bottom:1px solid rgba(239,203,74,.45);background:none;color:#d9c785;padding:7px 3px;cursor:pointer;font-size:.72rem;text-transform:uppercase;letter-spacing:.2em}.credit{position:absolute;bottom:16px;left:20px;right:20px;text-align:center;color:#6e6857;font-size:.62rem}.credit a{color:inherit;text-decoration:none;border-bottom:1px solid #554f41}
-.petal{position:fixed;z-index:12;top:-40px;width:15px;height:24px;border-radius:78% 22% 72% 28%/76% 27% 73% 24%;background:linear-gradient(145deg,#ffe16f 0,#e7b921 58%,#b98a0b 100%);box-shadow:inset -2px -1px 5px rgba(118,75,0,.18);pointer-events:none;animation:petal-fall linear forwards;opacity:.9}.spark{position:fixed;z-index:11;width:3px;height:3px;border-radius:50%;background:#ffe887;box-shadow:0 0 10px #ffd751;pointer-events:none;animation:spark-fall linear forwards}@keyframes petal-fall{0%{transform:translate3d(0,-10vh,0) rotate(0) rotateY(0)}50%{transform:translate3d(var(--sway),53vh,0) rotate(220deg) rotateY(130deg)}100%{transform:translate3d(var(--drift),112vh,0) rotate(520deg) rotateY(260deg);opacity:.08}}@keyframes spark-fall{to{transform:translate3d(var(--drift),105vh,0);opacity:0}}@keyframes pulse{50%{opacity:.16;transform:scale(1.08)}}
-@media(max-width:720px){.hero{min-height:100svh}.hero-media img{object-position:58% center}.hero-copy{padding:24px 20px 42px}.hero h2{font-size:clamp(3.5rem,19vw,6.2rem)}.hero-note{display:block}.micro{text-align:left;margin-top:18px;max-width:32ch}.scrollcue{display:none}.intro p{max-width:29ch}.note-card{border-radius:26px}.after{padding:64px 16px 78px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0}body{overflow:hidden;background:#080906;color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+:root{--rx:-8deg;--ry:0deg}
+.stage{position:relative;width:100%;height:100%;display:grid;place-items:center;perspective:1300px;overflow:hidden;background:
+radial-gradient(circle at 50% 32%,rgba(245,201,49,.16),transparent 22%),
+radial-gradient(circle at 50% 74%,rgba(127,92,11,.14),transparent 28%),
+linear-gradient(180deg,#12140e 0%,#090a07 55%,#040503 100%)}
+.stage:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(circle at center,#000,transparent 70%);opacity:.25}
+.glow{position:absolute;width:min(65vw,760px);aspect-ratio:1;border-radius:50%;background:#f0c82c;filter:blur(120px);opacity:.07;pointer-events:none}
+.title{position:absolute;z-index:20;top:max(24px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);text-align:center;pointer-events:none}
+.title small{display:block;color:#b8ad82;letter-spacing:.34em;text-transform:uppercase;font-size:.58rem;margin-bottom:6px}
+.title h1{margin:0;font-family:Georgia,serif;font-size:clamp(1.7rem,4vw,3rem);font-weight:400;letter-spacing:-.035em;color:#fff9df}.title em{color:#f4cb31;font-weight:400}
+.hint{position:absolute;z-index:20;bottom:max(18px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:#8d876d;white-space:nowrap;pointer-events:none}
+.scene{position:relative;width:min(92vw,720px);height:min(78vh,760px);transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry)) translateZ(0);transition:transform .12s ease-out;will-change:transform;cursor:grab}.scene:active{cursor:grabbing}
+.bouquet{position:absolute;left:50%;top:48%;width:1px;height:1px;transform-style:preserve-3d}
+.rose{position:absolute;width:190px;height:190px;margin:-95px;transform-style:preserve-3d;transform:translate3d(var(--x),var(--y),var(--z)) scale(var(--s)) rotateX(var(--tiltx)) rotateY(var(--tilty)) rotateZ(var(--tiltz));filter:drop-shadow(0 22px 18px rgba(0,0,0,.32));animation:bloom 1.2s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--delay)}
+.rose-core{position:absolute;left:50%;top:50%;width:1px;height:1px;transform-style:preserve-3d}
+.petal{position:absolute;left:50%;top:50%;width:var(--pw);height:var(--ph);margin-left:calc(var(--pw)/-2);margin-top:calc(var(--ph)/-2);transform-origin:50% 88%;transform-style:preserve-3d;border-radius:52% 48% 50% 50% / 72% 72% 28% 28%;
+background:
+radial-gradient(circle at 38% 22%,rgba(255,255,255,.72),transparent 17%),
+linear-gradient(145deg,#fff07a 0%,#f8d43b 28%,#e9b91e 64%,#bf8510 100%);
+box-shadow:
+inset 7px 3px 10px rgba(255,255,255,.24),
+inset -8px -14px 18px rgba(112,66,0,.18),
+0 1px 3px rgba(0,0,0,.12);
+backface-visibility:visible;
+transform:rotateZ(var(--a)) rotateX(var(--curl)) translateY(var(--r)) translateZ(var(--depth)) scale(var(--ps));
+}
+.petal:after{content:"";position:absolute;inset:4px 10px 34%;border-radius:50%;background:linear-gradient(180deg,rgba(255,255,255,.34),transparent);filter:blur(1px);opacity:.8}
+.center{position:absolute;left:50%;top:50%;width:42px;height:42px;margin:-21px;border-radius:50%;background:radial-gradient(circle at 48% 44%,#ffe861 0 16%,#e7ae12 38%,#855100 72%);transform:translateZ(42px);box-shadow:0 0 18px rgba(255,208,43,.34)}
+.stem{position:absolute;left:50%;top:50%;width:15px;height:300px;margin-left:-7px;transform-origin:50% 0;transform:translate3d(var(--x),var(--y),calc(var(--z) - 34px)) rotateZ(var(--stemrot)) rotateX(9deg);border-radius:10px;background:linear-gradient(90deg,#17370f,#5d8a35 42%,#284817 72%,#10270d);box-shadow:inset 2px 0 2px rgba(255,255,255,.13),8px 20px 28px rgba(0,0,0,.2)}
+.leaf{position:absolute;left:50%;top:50%;width:92px;height:44px;transform-style:preserve-3d;transform:translate3d(var(--x),var(--y),var(--z)) rotateZ(var(--rz)) rotateY(var(--ry2));border-radius:100% 0 100% 0;background:
+linear-gradient(155deg,rgba(255,255,255,.18),transparent 30%),
+linear-gradient(145deg,#234f1c,#4e7a2e 44%,#173712 78%);
+box-shadow:inset 0 -6px 9px rgba(0,0,0,.22),0 12px 20px rgba(0,0,0,.18);transform-origin:0 50%}
+.leaf:after{content:"";position:absolute;left:6px;right:7px;top:50%;height:1px;background:rgba(215,238,183,.32);transform:rotate(-18deg)}
+.wrap{position:absolute;left:50%;top:68%;width:390px;height:330px;margin-left:-195px;transform:translateZ(-95px);clip-path:polygon(11% 0,50% 15%,89% 0,78% 100%,22% 100%);background:linear-gradient(120deg,rgba(255,247,214,.95),rgba(210,174,94,.88) 46%,rgba(247,226,167,.96));filter:drop-shadow(0 28px 25px rgba(0,0,0,.35));opacity:.9}
+.wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(95deg,transparent 25%,rgba(255,255,255,.35) 36%,transparent 49%,rgba(110,69,8,.12) 68%,transparent)}
+.ribbon{position:absolute;left:50%;top:79%;width:300px;height:72px;margin-left:-150px;transform:translateZ(75px);border-radius:50%;background:linear-gradient(180deg,#e8bf39,#ab7710);box-shadow:0 10px 20px rgba(0,0,0,.28),inset 0 5px 8px rgba(255,255,255,.2)}
+.ribbon:before,.ribbon:after{content:"";position:absolute;top:28px;width:155px;height:115px;background:linear-gradient(140deg,#d9aa24,#8e5c08);clip-path:polygon(0 0,100% 18%,72% 100%,42% 68%,0 95%);z-index:-1}
+.ribbon:before{right:51%;transform:rotate(12deg)}.ribbon:after{left:51%;transform:scaleX(-1) rotate(12deg)}
+.tag{position:absolute;left:50%;top:83%;transform:translate3d(-50%,0,130px) rotateZ(-4deg);padding:10px 18px;border-radius:7px;background:#f5edd4;color:#6a5015;font-family:Georgia,serif;font-style:italic;font-size:1.05rem;box-shadow:0 10px 22px rgba(0,0,0,.26)}
+.floor{position:absolute;left:50%;top:80%;width:min(75vw,620px);height:150px;transform:translateX(-50%) rotateX(77deg) translateZ(-120px);border-radius:50%;background:radial-gradient(ellipse,#1a1c12 0,#0b0c08 56%,transparent 74%);filter:blur(5px)}
+.spark{position:absolute;width:3px;height:3px;border-radius:50%;background:#f8dc67;box-shadow:0 0 12px #ffd74d;animation:float var(--d) ease-in-out infinite alternate;opacity:.45}
+@keyframes bloom{0%{opacity:0;transform:translate3d(var(--x),calc(var(--y) + 70px),var(--z)) scale(.05) rotateZ(22deg)}100%{opacity:1;transform:translate3d(var(--x),var(--y),var(--z)) scale(var(--s)) rotateX(var(--tiltx)) rotateY(var(--tilty)) rotateZ(var(--tiltz))}}
+@keyframes float{to{transform:translate3d(var(--dx),-60px,60px);opacity:.9}}
+@media(max-width:650px){.scene{width:100vw;height:74vh;transform:rotateX(calc(var(--rx) + 3deg)) rotateY(var(--ry)) scale(.78)}.title{top:18px}.hint{bottom:12px}.tag{top:84%}}
+@media(prefers-reduced-motion:reduce){.rose,.spark{animation:none!important}.scene{transition:none}}
 </style>
 </head>
 <body>
-<div class="noise" aria-hidden="true"></div>
-<section class="intro" id="intro">
-  <div class="intro-inner">
-    <div class="mini">23 · 09 · 2026</div>
-    <h1>Para <em>Mariana</em></h1>
-    <p>No es una carta. Tampoco hace falta ponerle un nombre. Es solo algo bonito que tenía que llegar a ti.</p>
-    <button class="open-btn" id="openBtn">Abrir</button>
+<div class="stage" id="stage">
+  <div class="glow"></div>
+  <div class="title"><small>un detalle para</small><h1><em>Mariana</em></h1></div>
+  <div class="floor"></div>
+  <div class="scene" id="scene">
+    <div class="bouquet" id="bouquet">
+      <div class="wrap"></div>
+      <div class="ribbon"></div>
+      <div class="tag">Para Mariana</div>
+    </div>
   </div>
-</section>
-<main>
-  <section class="hero" id="hero">
-    <div class="hero-media">
-      <img src="https://images.unsplash.com/photo-1773212666512-45cac26de38a?auto=format&fit=crop&fm=jpg&q=88&w=2400" alt="Ramo real de rosas amarillas">
-    </div>
-    <div class="scrollcue">un poco más</div>
-    <div class="hero-copy">
-      <div class="kicker">Un detalle, nada más</div>
-      <h2>Rosas <span>amarillas.</span></h2>
-      <div class="hero-note">
-        <div class="quote">Dicen que hay personas que, sin proponérselo, hacen que ciertos días tengan un poco más de color. <strong>Estas son para ti.</strong></div>
-        <div class="micro">No tienes que entenderlo más de la cuenta. Solo recibirlas.</div>
-      </div>
-    </div>
-  </section>
-  <section class="after">
-    <article class="note-card">
-      <div class="seal">M</div>
-      <h3>Que tengas un día bonito, Mariana.</h3>
-      <p>No quise mandarte una frase copiada ni algo que se sintiera obligado. Solo <b>unas rosas amarillas</b> y un detalle hecho especialmente para ti.</p>
-      <p class="quiet">Lo demás puede quedarse entre líneas.</p>
-      <button class="again" id="againBtn">ver las rosas otra vez</button>
-    </article>
-    <div class="credit">Foto de rosas: <a href="https://unsplash.com/photos/a-bouquet-of-vibrant-yellow-roses-ZxExGwz9FgU" target="_blank" rel="noreferrer">ekrem osmanoglu · Unsplash</a></div>
-  </section>
-</main>
+  <div class="hint">mueve el ramo · arrastra con el dedo</div>
+</div>
 <script>
-const intro=document.getElementById('intro');
-const openBtn=document.getElementById('openBtn');
-const againBtn=document.getElementById('againBtn');
-let opened=false;
-function makePetal(delay=0){setTimeout(()=>{const p=document.createElement('i');p.className='petal';p.style.left=(Math.random()*100)+'vw';p.style.width=(10+Math.random()*12)+'px';p.style.height=(18+Math.random()*18)+'px';p.style.setProperty('--sway',((Math.random()-.5)*160)+'px');p.style.setProperty('--drift',((Math.random()-.5)*300)+'px');p.style.animationDuration=(6+Math.random()*5)+'s';document.body.appendChild(p);setTimeout(()=>p.remove(),12000)},delay)}
-function makeSpark(delay=0){setTimeout(()=>{const s=document.createElement('i');s.className='spark';s.style.left=(Math.random()*100)+'vw';s.style.top=(-10-Math.random()*80)+'px';s.style.setProperty('--drift',((Math.random()-.5)*120)+'px');s.style.animationDuration=(3+Math.random()*4)+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),8000)},delay)}
-function openGift(){if(opened)return;opened=true;document.body.classList.add('open');intro.classList.add('out');if(navigator.vibrate)navigator.vibrate(25);for(let i=0;i<34;i++)makePetal(i*70);for(let i=0;i<24;i++)makeSpark(i*45);setTimeout(()=>window.scrollTo({top:0,behavior:'instant'}),150)}
-openBtn.addEventListener('click',openGift);
-againBtn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});for(let i=0;i<18;i++)makePetal(i*85)});
-setInterval(()=>{if(opened&&Math.random()>.62)makePetal()},2100);
-document.addEventListener('keydown',e=>{if(e.key==='Enter'&&!opened)openGift()});
+const bouquet=document.getElementById('bouquet');
+const scene=document.getElementById('scene');
+
+const roses=[
+[-170,-170,-10,.82,-8,12,-16],
+[-60,-215,65,.93,-7,-8,7],
+[65,-210,100,1.0,-4,9,-4],
+[170,-160,5,.83,-10,-13,15],
+[-205,-65,35,.88,-3,18,-9],
+[-92,-78,145,1.08,-5,-4,8],
+[35,-95,185,1.12,-3,6,-5],
+[150,-62,95,.97,-7,-10,10],
+[-145,25,65,.92,-10,10,-8],
+[-28,12,205,1.16,-2,-2,2],
+[102,18,125,1.02,-6,8,8],
+[-72,105,82,.86,-9,-7,-6],
+[58,102,52,.84,-8,10,7]
+];
+
+function el(cls,styles={}){const n=document.createElement('div');n.className=cls;for(const[k,v]of Object.entries(styles))n.style.setProperty(k,v);return n}
+
+function makeRose([x,y,z,s,tx,ty,tz],i){
+  const stem=el('stem',{'--x':x+'px','--y':(y+55)+'px','--z':z+'px','--stemrot':(x*.035)+'deg'});
+  bouquet.appendChild(stem);
+  const rose=el('rose',{'--x':x+'px','--y':y+'px','--z':z+'px','--s':s,'--tiltx':tx+'deg','--tilty':ty+'deg','--tiltz':tz+'deg','--delay':(i*70)+'ms'});
+  const core=el('rose-core');
+  const rings=[
+    {n:5,r:4,w:42,h:70,c:-55,d:34,s:.66},
+    {n:8,r:12,w:54,h:86,c:-40,d:25,s:.77},
+    {n:11,r:24,w:66,h:100,c:-27,d:15,s:.88},
+    {n:14,r:38,w:78,h:112,c:-16,d:5,s:1},
+    {n:17,r:53,w:88,h:122,c:-7,d:-6,s:1.08}
+  ];
+  rings.forEach((ring,ri)=>{
+    const offset=(ri%2)*10;
+    for(let j=0;j<ring.n;j++){
+      const jitter=(Math.random()-.5)*9;
+      const p=el('petal',{
+        '--a':((360/ring.n)*j+offset+jitter)+'deg',
+        '--r':(-ring.r)+'px',
+        '--depth':ring.d+'px',
+        '--curl':(ring.c+(Math.random()-.5)*9)+'deg',
+        '--pw':ring.w+'px','--ph':ring.h+'px','--ps':ring.s
+      });
+      core.appendChild(p);
+    }
+  });
+  core.appendChild(el('center'));
+  rose.appendChild(core);
+  bouquet.appendChild(rose);
+}
+
+function makeLeaf(x,y,z,rz,ry){
+  bouquet.appendChild(el('leaf',{'--x':x+'px','--y':y+'px','--z':z+'px','--rz':rz+'deg','--ry2':ry+'deg'}));
+}
+roses.forEach(makeRose);
+[
+[-250,-90,-10,-42,10],[210,-100,-15,26,-15],[-230,10,20,-20,25],[205,20,40,150,30],
+[-185,115,-15,-15,-25],[150,120,-10,165,18],[-110,155,5,-40,15],[95,158,10,205,-18],
+[-15,165,28,-82,12]
+].forEach(v=>makeLeaf(...v));
+
+for(let i=0;i<28;i++){
+  const s=el('spark',{'left':(6+Math.random()*88)+'%','top':(15+Math.random()*70)+'%','--d':(2.5+Math.random()*4)+'s','--dx':((Math.random()-.5)*80)+'px'});
+  scene.appendChild(s);
+}
+
+let targetX=-8,targetY=0,drag=false,lastX=0,lastY=0;
+function apply(){document.documentElement.style.setProperty('--rx',targetX+'deg');document.documentElement.style.setProperty('--ry',targetY+'deg')}
+function point(x,y){
+  const r=scene.getBoundingClientRect();
+  targetY=((x-r.left)/r.width-.5)*24;
+  targetX=-8-((y-r.top)/r.height-.5)*12;
+  apply();
+}
+scene.addEventListener('pointerdown',e=>{drag=true;lastX=e.clientX;lastY=e.clientY;scene.setPointerCapture(e.pointerId)});
+scene.addEventListener('pointermove',e=>{
+  if(drag){targetY+=(e.clientX-lastX)*.12;targetX-=(e.clientY-lastY)*.08;targetY=Math.max(-28,Math.min(28,targetY));targetX=Math.max(-20,Math.min(10,targetX));lastX=e.clientX;lastY=e.clientY;apply()}
+  else if(e.pointerType==='mouse') point(e.clientX,e.clientY);
+});
+scene.addEventListener('pointerup',e=>{drag=false;scene.releasePointerCapture(e.pointerId)});
+scene.addEventListener('pointercancel',()=>drag=false);
+window.addEventListener('deviceorientation',e=>{
+  if(e.gamma==null||innerWidth>700)return;
+  targetY=Math.max(-18,Math.min(18,e.gamma*.45));
+  targetX=-8+Math.max(-8,Math.min(8,(e.beta-45)*.12));
+  apply();
+});
 </script>
 </body>
 </html>
